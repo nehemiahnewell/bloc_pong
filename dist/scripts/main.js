@@ -8,7 +8,7 @@ function draw_pong_table() {
   function paddle(direction, position, length) {
     pong_context.beginPath();
     pong_context.arc(position, length/2, length/8, 1.5 * Math.PI, .5 * Math.PI, direction);
-    pong_context.lineWidth = 15;
+    pong_context.lineWidth = 10;
     pong_context.strokeStyle = 'black';
     pong_context.stroke();
   }
