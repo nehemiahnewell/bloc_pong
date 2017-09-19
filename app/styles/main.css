@@ -1,0 +1,33 @@
+html {
+  height: 100%; /* makes sure our HTML takes up 100% of the browser window */
+  font-size: 100%;
+}
+
+body {
+  background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  font-family: 'Open Sans'; /* sets our font to the "Open Sans" typeface */
+  color: white;             /* sets the text color to white */
+  min-height: 100%;         /* says the height of the body must be, at minimum, 100% of the window */
+  padding-bottom: 200px;
+}
+
+*, *::before, *::after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+
+/* Medium screens (640px) */
+@media (min-width: 640px) {
+  html { font-size: 112%; }
+}
+
+/* Large screens (1024px) */
+@media (min-width: 1024px) {
+  html { font-size: 120%; }
+}
