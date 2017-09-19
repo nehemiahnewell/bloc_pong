@@ -8,7 +8,9 @@
     <link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="/styles/main.css">
   </head>
-  <body>
+  <body onresize="draw_pong_table()" onload="draw_pong_table()">
     <h1>Welcome to Pong</h1>
+    <canvas id="pong_table"></canvas>
+    <script src="/scripts/main.js"></script>
   </body>
 </html>

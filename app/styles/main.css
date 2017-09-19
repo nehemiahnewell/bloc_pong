@@ -4,23 +4,20 @@ html {
 }
 
 body {
-  background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
+  background-color: AntiqueWhite;
   font-family: 'Open Sans'; /* sets our font to the "Open Sans" typeface */
-  color: white;             /* sets the text color to white */
+  color: BurlyWood;             /* sets the text color to white */
   min-height: 100%;         /* says the height of the body must be, at minimum, 100% of the window */
   padding-bottom: 200px;
 }
+
+#pong_table { width: 80vw; margin: 100px auto; height: 80vh; border: solid 4px DarkGreen; background-color: chartreuse; display:block;}
 
 *, *::before, *::after {
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;
    box-sizing: border-box;
 }
-
 
 /* Medium screens (640px) */
 @media (min-width: 640px) {
@@ -30,4 +27,9 @@ body {
 /* Large screens (1024px) */
 @media (min-width: 1024px) {
   html { font-size: 120%; }
+}
+
+h1
+{
+  text-align: center;
 }
