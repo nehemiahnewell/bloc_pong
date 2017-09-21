@@ -14,7 +14,7 @@ body {
 #pong_table 
 { 
   width: 80vh;
-  margin: 100px auto;
+  margin: 0 auto -20vh auto;
   height: 80vh;
   border:  solid 4px DarkGreen;
   background-color: chartreuse;
