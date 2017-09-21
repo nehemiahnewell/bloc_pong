@@ -11,7 +11,7 @@ body {
   padding-bottom: 200px;
 }
 
-#pong_table { width: 80vw; margin: 100px auto; height: 80vh; border: solid 4px DarkGreen; background-color: chartreuse; display:block;}
+#pong_table { width: 80vh; margin: 100px auto; height: 80vh; border: solid 4px DarkGreen; background-color: chartreuse; display:block;}
 
 *, *::before, *::after {
    -moz-box-sizing: border-box;
