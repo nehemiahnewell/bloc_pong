@@ -5,10 +5,26 @@ var size = (pong_canvas.clientWidth > pong_canvas.clientHeight) ? pong_canvas.cl
 var player_pos;
 var computer_pos;
 var ball_pos;
+var player_score = document.getElementById('player_score');
+var computer_score = document.getElementById('enemy_score');
+var you = 0;
+var them = 0;
 pong_canvas.width = size;
 pong_canvas.height = size;
 var pong_context = pong_canvas.getContext("2d");
-
+function check_state()
+{
+  if (you === 11)
+  {
+    document.getElementById('win').style.display = "inline";
+    pong_canvas.style.display = 'none';
+  }
+  if (them === 11)
+  {
+    document.getElementById('lose').style.display = "inline";
+    pong_canvas.style.display = 'none';
+  }
+}
 function draw_background() {
   pong_context.fillStyle = 'chartreuse';
   pong_context.fillRect(0, 0, size, size);
@@ -61,7 +77,7 @@ function pong_ball(position, length) {
   this.playing_flag = false;
   this.start_round = function()
   {
-    this.xmove = (Math.floor(Math.random() * 2) == 0) ? 1 : -1;
+    this.xmove = (Math.floor(Math.random() * 2) == 0) ? 2 : -2;
     this.ymove = Math.floor(Math.random() * (3)) -1;
   };
   this.reinit = function(position, length)
@@ -94,9 +110,20 @@ function pong_ball(position, length) {
         this.ymove *= -1;
       }
       //end round logic
-      if(this.column <= 0 || this.column >= this.measure)
+      if(this.column <= 0)
       {
+        
         this.reinit(size/2,size);
+        them++;
+        computer_score.innerHTML = them;
+        check_state();
+      }
+      if(this.column >= this.measure)
+      {
+        
+        this.reinit(size/2,size);
+        you++;
+        player_score.innerHTML = you;
       }
       //bounce off player paddle logic
       if(this.column <= (this.step * 2.5))

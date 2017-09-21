@@ -9,8 +9,11 @@
     <link rel="stylesheet" type="text/css" href="/styles/main.css">
   </head>
   <body onload="step()">
-    <h1>Welcome to Pong</h1>
+    <h1>Welcome to Pong, press a to start playing.</h1>
+    <div id='scorebar'><div class='score'>Player Score <br /><span id='player_score'>0</span></div><div class='score'>Enemy Score <br /><span id='enemy_score'>0</span></div></div>
     <canvas id="pong_table"></canvas>
+    <div id="win" style="display:none">You Win, Refresh to play again!</div>
+    <div id="lose" style="display:none">You Lose, Refresh to play again!</div>
     <script src="/scripts/main.js"></script>
   </body>
 </html>

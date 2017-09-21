@@ -11,7 +11,27 @@ body {
   padding-bottom: 200px;
 }
 
-#pong_table { width: 80vh; margin: 100px auto; height: 80vh; border: solid 4px DarkGreen; background-color: chartreuse; display:block;}
+#pong_table 
+{ 
+  width: 80vh;
+  margin: 100px auto;
+  height: 80vh;
+  border:  solid 4px DarkGreen;
+  background-color: chartreuse;
+  display:block;
+}
+#scorebar
+{
+  display: block;
+  text-align: center;
+}
+
+.score
+{
+  display: inline-block;
+  font-weight: bold;
+  margin:  -3em 5em;
+}
 
 *, *::before, *::after {
    -moz-box-sizing: border-box;
