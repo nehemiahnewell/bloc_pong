@@ -4,6 +4,7 @@ var pong_canvas = document.getElementById('pong_table');
 var size = (pong_canvas.clientWidth > pong_canvas.clientHeight) ? pong_canvas.clientHeight : pong_canvas.clientWidth;
 var player_pos;
 var computer_pos;
+var ball_pos;
 pong_canvas.width = size;
 pong_canvas.height = size;
 var pong_context = pong_canvas.getContext("2d");
@@ -145,6 +146,7 @@ function pong_ball(position, length) {
     pong_context.arc(this.column, this.row, this.step, 0, 2 * Math.PI, false);
     pong_context.fillStyle = 'DarkGoldenRod';
     pong_context.fill();
+    return this.row;
   };
 } 
 
@@ -152,12 +154,33 @@ var player = new paddle(size/40,size);
 var enemy = new paddle(size-(size/40),size);
 var ball = new pong_ball(size/2,size);
 
+enemy.moved = 10;
+enemy.update = function()
+{
+  if(this.moved === 0)
+  {
+    this.moved = 10;
+    if(ball_pos > computer_pos)
+    {
+      enemy.move("down");
+    }
+    else
+    {
+      enemy.move("up");
+    }
+  }
+  else
+  {
+    this.moved--;
+  }
+};
+
 function render ()
 {
   draw_background();
   player_pos = player.render();
   computer_pos = enemy.render();
-  ball.render();
+  ball_pos = ball.render();
 }
 // animating the paddle goes here
 
@@ -168,6 +191,7 @@ function step()
 {
   render();
   ball.bounce(player_pos, computer_pos);
+  enemy.update();
   animate(step);
 }
 
