@@ -126,13 +126,13 @@ function pong_ball(position, length) {
         player_score.innerHTML = you;
       }
       //bounce off player paddle logic
-      if(this.column <= (this.step * 2.5))
+      if(this.column <= (this.step * 2.5) && this.xmove < 0)
       {
         if((this.row - player) < 0 && (this.row - player) > -(2 * this.step))
         {
           if(this.ymove < 2)
           {
-            this.ymove += 1;
+            this.ymove -= 1;
           }
           this.xmove *= -1;
         }
@@ -140,19 +140,19 @@ function pong_ball(position, length) {
         {
           if(this.ymove < -2)
           {
-            this.ymove -= 1;
+            this.ymove += 1;
           }
           this.xmove *= -1;
         }
       }
       //bounce off computer paddle logic
-      if(this.column >= (this.measure -(this.step * 2.5)))
+      if(this.column >= (this.measure -(this.step * 2.5)) && this.xmove > 0)
       {
         if((this.row - computer) < 0 && (this.row - computer) > -(2 * this.step))
         {
           if(this.ymove < 2)
           {
-            this.ymove += 1;
+            this.ymove -= 1;
           }
           this.xmove *= -1;
         }
@@ -160,7 +160,7 @@ function pong_ball(position, length) {
         {
           if(this.ymove < -2)
           {
-            this.ymove -= 1;
+            this.ymove += 1;
           }
           this.xmove *= -1;
         }
